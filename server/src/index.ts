@@ -5,6 +5,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import dashboardRoutes from './routes/dashboardRoutes';
+import productRoutes from './routes/productRoutes';
 // Route imports
 
 // Configurations
@@ -19,7 +20,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 // Routes
-app.use("/dashboard",dashboardRoutes);
+app.use("/dashboard", dashboardRoutes);
+app.use("/products", productRoutes);
 
 // Server
 const port = process.env.PORT || 3001;
